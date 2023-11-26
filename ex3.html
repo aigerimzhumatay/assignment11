@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handling and Two-Way Binding</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+    <div id="app">
+        <input v-model="username" placeholder="Enter your username">
+        <h2>Welcome {{ username }}!</h2>
+        <button @click="setDefaultUsername">Set Default Username</button>
+    </div>
+    
+    <script>
+        
+        var app = new Vue({
+            
+            data: {
+                username: ''
+            },
+            methods: {
+                setDefaultUsername: function() {
+                    this.username = '';
+                }
+            }
+        });
+        app.$mount('#app');
+    </script>
+</body>
+</html>
